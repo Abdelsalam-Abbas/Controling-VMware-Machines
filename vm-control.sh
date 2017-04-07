@@ -42,12 +42,12 @@ if [[ $cmd = 'start' ]]; then
 	echo -n "| Connecting to ${Machine_Name} "
 	# testing ssh connectivity to the server and waiting till being connected"
 	while [[ True ]]; do
-	    ssh ${Machine_IP} 2>/dev/null  && sleep 5
-	    sleep 2 
+	    ssh ${Machine_IP} 2>/dev/null 
 	    # exit script if connected 
 	    if [[ $? = 0 ]]; then
 		exit ;
 	    fi
+	    sleep 2 
 	    echo -n "."
 	done
 elif [[ $cmd = 'stop' ]]; then
